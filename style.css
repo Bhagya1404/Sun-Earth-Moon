@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: black;
+}
+
+.container {
+    font-size: 10px;
+    width: 40em;
+    height: 40em;
+    position: relative;
+}
+
+.sun {
+    position: absolute;
+    top: 15em;
+    left: 15em;
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 0);
+    box-shadow: 0 0 3em rgb(207, 204, 204);
+}
+
+.earth-orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30em;
+    height: 30em;
+    border: 0.1em dashed rgba(255, 255, 255, 0.253);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.earth {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1.5em;
+    height: 1.5em; 
+    background-color: blue;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: earthOrbit 10s linear infinite;
+}
+
+.moon-orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4em;
+    height: 4em;
+    border: 0.1em dashed rgba(255, 255, 255, 0.253);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.moon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0.6em;
+    height: 0.6em;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    animation: moonOrbit 2.7s linear infinite;
+}
+
+/* Labels */
+.label {
+    position: absolute;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    /* text-shadow: 0 0 5px rgba(255, 255, 255, 0.8); */
+    text-align: center;
+}
+
+.sun-label {
+    top: -1.5em;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.earth-label {
+    top: -1.5em;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.moon-label {
+    top: -1.2em;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8em;
+}
+
+/* Animations */
+@keyframes earthOrbit {
+    0% { transform: rotate(0deg) translateX(15em) rotate(0deg); }
+    100% { transform: rotate(360deg) translateX(15em) rotate(-360deg); }
+}
+
+@keyframes moonOrbit {
+    0% { transform: rotate(0deg) translateX(2em) rotate(0deg); }
+    100% { transform: rotate(360deg) translateX(2em) rotate(-360deg); }
+}
